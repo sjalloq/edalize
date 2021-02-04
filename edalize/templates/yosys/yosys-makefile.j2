@@ -11,6 +11,8 @@ all: $(TARGET).{{ default_target }}
 	yosys -l yosys.log -p "tcl $?"
 %.edif: {{ script_name }}
 	yosys -l yosys.log -p "tcl $?"
+%.verilog: {{ script_name }}
+	yosys -l yosys.log -p "tcl $?"
 
 clean:
-	rm -f $(TARGET).blif $(TARGET).json $(TARGET).edif
+	rm -f $(TARGET).blif $(TARGET).json $(TARGET).edif $(TARGET).verilog
